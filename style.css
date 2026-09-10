@@ -18,54 +18,11 @@ html {
 body {
     font-family: "DM Sans", sans-serif;
     color: #ffffff;
-    background:
-        linear-gradient(
-            rgba(20, 10, 35, 0.20),
-            rgba(20, 10, 35, 0.20)
-        ),
-        url("./background.jpeg") center center / cover fixed no-repeat;
+    background-color: #a992c4;
 
     min-height: 100vh;
     line-height: 1.6;
     overflow-x: hidden;
-}
-
-
-/* =========================================================
-   GLOBAL BACKGROUND
-========================================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(24, 10, 45, 0.18),
-            rgba(92, 52, 125, 0.08),
-            rgba(15, 8, 28, 0.20)
-        );
-
-    pointer-events: none;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-
-    background:
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(255, 255, 255, 0.10),
-            transparent 38%
-        );
-
-    pointer-events: none;
 }
 
 a {
@@ -73,9 +30,49 @@ a {
     text-decoration: none;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
+
+/* =========================================================
+   DREAMY LAVENDER BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(91, 55, 125, 0.08),
+            rgba(91, 55, 125, 0.08)
+        ),
+        url("https://afairuzia-sudo.github.io/my-profile-/background.jpeg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255, 255, 255, 0.12),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(65, 35, 90, 0.08),
+            rgba(65, 35, 90, 0.20)
+        );
+
+    z-index: -1;
+    pointer-events: none;
 }
 
 
@@ -89,40 +86,42 @@ a {
     left: 0;
 
     width: 100%;
-    height: 76px;
+    height: 74px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 7%;
+    padding: 0 6.5%;
 
-    background: rgba(25, 14, 40, 0.32);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(67, 43, 86, 0.28);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
     z-index: 1000;
 }
 
 .nav-logo {
-    width: 42px;
-    height: 42px;
+    width: 43px;
+    height: 43px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 50%;
-
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.40);
 
     background: rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -131,7 +130,7 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 35px;
 
     list-style: none;
 }
@@ -139,14 +138,19 @@ a {
 .nav-links a {
     position: relative;
 
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.88);
 
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
     text-transform: uppercase;
 
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
 }
 
 .nav-links a::after {
@@ -164,10 +168,6 @@ a {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
-}
-
 .nav-links a:hover::after {
     width: 100%;
 }
@@ -178,98 +178,94 @@ a {
 ========================================================= */
 
 .hero {
-    min-height: 100vh;
+    position: relative;
 
     width: 100%;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 120px 7% 80px;
+    padding: 105px 7% 70px;
 
     text-align: center;
-
-    position: relative;
 }
 
 .hero-content {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
 
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 
 /* =========================================================
-   HERO SMALL LABEL
+   HERO EYEBROW
 ========================================================= */
 
 .hero-eyebrow {
-    margin-bottom: 24px;
+    margin-bottom: 17px;
 
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.82);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
 
-    letter-spacing: 4px;
+    letter-spacing: 3.2px;
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   HERO NAME
+   NAME
 ========================================================= */
 
 .hero h1 {
-    margin: 0 0 22px;
+    margin: 0 0 17px;
 
     color: #ffffff;
 
-    font-family: "Parisienne", "Brush Script MT", cursive;
+    font-family: "Parisienne", cursive;
 
-    font-size: clamp(76px, 10vw, 145px);
+    font-size: clamp(68px, 7.5vw, 105px);
 
     font-weight: 400;
-    line-height: 0.82;
+    line-height: 0.84;
 
-    letter-spacing: 1px;
+    letter-spacing: 0;
 
     text-shadow:
-        0 4px 30px rgba(30, 10, 50, 0.35);
-
-    position: relative;
+        0 5px 25px rgba(54, 25, 75, 0.20);
 }
 
 
 /* =========================================================
-   HERO MAIN TITLE
+   MAIN HEADLINE
 ========================================================= */
 
 .hero-title {
-    max-width: 850px;
+    max-width: 780px;
 
-    margin: 0 auto 24px;
+    margin: 0 auto 19px;
 
     color: #ffffff;
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(30px, 4vw, 54px);
+    font-size: clamp(27px, 3.1vw, 40px);
 
     font-weight: 600;
-    line-height: 1.12;
+    line-height: 1.16;
 
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 
     text-shadow:
-        0 3px 20px rgba(20, 10, 40, 0.25);
+        0 4px 18px rgba(54, 25, 75, 0.18);
 }
 
 
@@ -278,16 +274,16 @@ a {
 ========================================================= */
 
 .hero-description {
-    max-width: 680px;
+    max-width: 650px;
 
-    margin: 0 auto 34px;
+    margin: 0 auto 27px;
 
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.88);
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 
-    line-height: 1.8;
+    line-height: 1.75;
 }
 
 
@@ -300,9 +296,7 @@ a {
     align-items: center;
     justify-content: center;
 
-    gap: 14px;
-
-    margin-top: 5px;
+    gap: 12px;
 }
 
 .hero-buttons a {
@@ -310,38 +304,38 @@ a {
     align-items: center;
     justify-content: center;
 
-    min-width: 165px;
-    padding: 14px 24px;
+    min-width: 150px;
+
+    padding: 12px 22px;
 
     border-radius: 50px;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
 
     transition:
         transform 0.3s ease,
         background 0.3s ease,
-        border 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .hero-buttons a:first-child {
-    color: #33203f;
+    color: #4b315c;
 
-    background: rgba(255, 255, 255, 0.90);
+    background: rgba(255, 255, 255, 0.92);
 
-    border: 1px solid rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.92);
 }
 
 .hero-buttons a:last-child {
     color: #ffffff;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(112, 76, 139, 0.30);
 
-    border: 1px solid rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.45);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -351,7 +345,7 @@ a {
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 35px rgba(30, 10, 50, 0.25);
+        0 12px 30px rgba(58, 28, 80, 0.22);
 }
 
 
@@ -362,36 +356,37 @@ a {
 .hero-mark {
     position: absolute;
 
-    right: 7%;
-    bottom: 45px;
+    right: 6.5%;
+    bottom: 38px;
 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 
-    gap: 5px;
+    gap: 4px;
 
-    color: rgba(255, 255, 255, 0.52);
+    color: rgba(255, 255, 255, 0.65);
 
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
 .hero-mark::before {
     content: "";
 
-    width: 45px;
+    width: 38px;
     height: 1px;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.55);
 }
 
 
 /* =========================================================
-   GENERAL SECTION
+   SECTIONS
 ========================================================= */
 
 section {
@@ -399,17 +394,23 @@ section {
 
     width: 100%;
 
-    padding: 120px 7%;
+    padding: 100px 7%;
 
-    background: rgba(30, 17, 45, 0.25);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(92, 62, 116, 0.34),
+            rgba(124, 91, 151, 0.22)
+        );
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 section::before {
     content: "";
 
     position: absolute;
+
     top: 0;
     left: 7%;
 
@@ -419,14 +420,14 @@ section::before {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.18),
         transparent
     );
 }
 
 
 /* =========================================================
-   SECTION CONTAINER
+   CONTAINERS
 ========================================================= */
 
 .container,
@@ -436,39 +437,39 @@ section::before {
 .experience-container,
 .contact-container {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1160px;
 
     margin: 0 auto;
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION TITLES
 ========================================================= */
 
 section h2 {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     color: #ffffff;
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(38px, 5vw, 64px);
+    font-size: clamp(36px, 4.5vw, 58px);
 
     font-weight: 600;
     line-height: 1.1;
 
-    letter-spacing: -1px;
+    letter-spacing: -0.8px;
 }
 
 .section-label {
     display: block;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.65);
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
 
     letter-spacing: 3px;
@@ -481,26 +482,26 @@ section h2 {
 ========================================================= */
 
 .about {
-    min-height: 75vh;
+    min-height: 70vh;
 
     display: flex;
     align-items: center;
 }
 
 .about-content {
-    max-width: 780px;
+    max-width: 900px;
 }
 
 .about p {
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.86);
 
-    font-size: 17px;
-    line-height: 1.9;
+    font-size: 15px;
+    line-height: 1.85;
 }
 
 
 /* =========================================================
-   SERVICES / WHAT I DO
+   SERVICES
 ========================================================= */
 
 .services-grid {
@@ -510,26 +511,22 @@ section h2 {
 
     gap: 18px;
 
-    margin-top: 55px;
+    margin-top: 45px;
 }
 
 .service-card {
-    min-height: 220px;
+    min-height: 200px;
 
-    padding: 32px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 28px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.13),
-            rgba(255, 255, 255, 0.04)
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.06)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
     border-radius: 20px;
 
@@ -537,42 +534,39 @@ section h2 {
     -webkit-backdrop-filter: blur(18px);
 
     box-shadow:
-        0 20px 50px rgba(20, 8, 35, 0.12);
+        0 15px 45px rgba(50, 25, 70, 0.12);
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        border 0.3s ease;
+        background 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.19),
-            rgba(255, 255, 255, 0.07)
+            rgba(255, 255, 255, 0.21),
+            rgba(255, 255, 255, 0.08)
         );
-
-    border-color: rgba(255, 255, 255, 0.28);
 }
 
 .service-card h3 {
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 
     color: #ffffff;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .service-card p {
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.75);
 
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.75;
 }
 
@@ -582,7 +576,7 @@ section h2 {
 ========================================================= */
 
 .case-studies {
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 .case-grid {
@@ -590,24 +584,24 @@ section h2 {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 18px;
 
-    margin-top: 55px;
+    margin-top: 45px;
 }
 
 .case-card {
-    padding: 34px;
+    padding: 30px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.12),
-            rgba(255, 255, 255, 0.04)
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.05)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.17);
 
-    border-radius: 22px;
+    border-radius: 20px;
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -618,40 +612,40 @@ section h2 {
 }
 
 .case-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 
-    border-color: rgba(255, 255, 255, 0.27);
+    border-color: rgba(255, 255, 255, 0.30);
 }
 
 .case-number {
     display: block;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.50);
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 600;
 
     letter-spacing: 2px;
 }
 
 .case-card h3 {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     color: #ffffff;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 25px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 1.3;
 }
 
 .case-card p {
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.72);
 
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 13px;
+    line-height: 1.75;
 }
 
 
@@ -663,32 +657,32 @@ section h2 {
     display: flex;
     flex-direction: column;
 
-    margin-top: 55px;
+    margin-top: 45px;
 }
 
 .experience-item {
     display: grid;
 
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 180px 1fr;
 
-    gap: 45px;
+    gap: 40px;
 
-    padding: 38px 0;
+    padding: 32px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .experience-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .experience-date {
-    color: rgba(255, 255, 255, 0.52);
+    color: rgba(255, 255, 255, 0.55);
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 600;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
 }
 
@@ -699,27 +693,27 @@ section h2 {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 26px;
+    font-size: 24px;
 }
 
 .experience-item h4 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.62);
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
 }
 
 .experience-item p {
     max-width: 760px;
 
-    color: rgba(255, 255, 255, 0.70);
+    color: rgba(255, 255, 255, 0.74);
 
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.8;
 }
 
@@ -729,10 +723,11 @@ section h2 {
 ========================================================= */
 
 .contact {
-    min-height: 70vh;
+    min-height: 65vh;
 
     display: flex;
     align-items: center;
+
     text-align: center;
 }
 
@@ -743,17 +738,17 @@ section h2 {
 }
 
 .contact h2 {
-    max-width: 800px;
+    max-width: 760px;
 }
 
 .contact p {
-    max-width: 650px;
+    max-width: 620px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
-    color: rgba(255, 255, 255, 0.70);
+    color: rgba(255, 255, 255, 0.74);
 
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
 }
 
@@ -762,23 +757,23 @@ section h2 {
     align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    gap: 12px;
 
     flex-wrap: wrap;
 }
 
 .contact-links a {
-    padding: 13px 23px;
+    padding: 11px 20px;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.28);
 
     border-radius: 50px;
 
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.08);
 
     color: #ffffff;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
 
     letter-spacing: 1px;
@@ -786,15 +781,13 @@ section h2 {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .contact-links a:hover {
     transform: translateY(-3px);
 
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.16);
 }
 
 
@@ -803,66 +796,22 @@ section h2 {
 ========================================================= */
 
 footer {
-    padding: 35px 7%;
+    padding: 30px 7%;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 
-    background: rgba(20, 10, 30, 0.30);
+    background: rgba(58, 35, 76, 0.35);
 
     text-align: center;
 }
 
 footer p {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.52);
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
-}
-
-
-/* =========================================================
-   GLASS UTILITY
-========================================================= */
-
-.glass {
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(255, 255, 255, 0.14);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-radius: 20px;
-}
-
-
-/* =========================================================
-   SELECTION
-========================================================= */
-
-::selection {
-    background: rgba(214, 185, 255, 0.45);
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(20, 10, 30, 0.35);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
 }
 
 
@@ -881,7 +830,7 @@ footer p {
     }
 
     .nav-links a {
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 1px;
     }
 
@@ -896,7 +845,7 @@ footer p {
 
     .services-grid,
     .case-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     section {
@@ -914,50 +863,48 @@ footer p {
 @media (max-width: 650px) {
 
     .navbar {
-        height: 68px;
+        height: 67px;
     }
 
     .nav-logo {
         width: 36px;
         height: 36px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .nav-links {
-        gap: 11px;
+        gap: 9px;
     }
 
     .nav-links a {
-        font-size: 8px;
-        letter-spacing: 0.7px;
+        font-size: 7px;
+        letter-spacing: 0.5px;
     }
 
     .hero {
         min-height: 100svh;
 
         padding:
-            100px
+            95px
             6%
-            60px;
+            55px;
     }
 
     .hero-eyebrow {
-        font-size: 8px;
-        letter-spacing: 2.5px;
+        font-size: 7px;
+        letter-spacing: 2px;
     }
 
     .hero h1 {
-        font-size: clamp(64px, 18vw, 95px);
+        font-size: clamp(58px, 17vw, 82px);
     }
 
     .hero-title {
-        font-size: 28px;
-        letter-spacing: -0.5px;
+        font-size: 25px;
     }
 
     .hero-description {
-        font-size: 14px;
-        line-height: 1.7;
+        font-size: 13px;
     }
 
     .hero-buttons {
@@ -967,15 +914,15 @@ footer p {
 
     .hero-buttons a {
         width: 100%;
-        max-width: 260px;
+        max-width: 250px;
     }
 
     section {
-        padding: 85px 6%;
+        padding: 80px 6%;
     }
 
     section h2 {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .services-grid,
@@ -985,11 +932,11 @@ footer p {
 
     .experience-item {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
 
     .experience-item h3 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .contact-links {
@@ -999,7 +946,7 @@ footer p {
 
     .contact-links a {
         width: 100%;
-        max-width: 280px;
+        max-width: 270px;
         text-align: center;
     }
 }
