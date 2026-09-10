@@ -11,15 +11,13 @@
 
 <body>
 
-    <!-- =====================================================
+    <!-- =========================
          NAVIGATION
-    ====================================================== -->
+    ========================== -->
 
     <nav class="navbar">
 
-        <div class="nav-logo">
-            FA
-        </div>
+        <div class="nav-logo">FA</div>
 
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -32,9 +30,9 @@
     </nav>
 
 
-    <!-- =====================================================
+    <!-- =========================
          HERO
-    ====================================================== -->
+    ========================== -->
 
     <header class="hero">
 
@@ -60,17 +58,54 @@
                 bottlenecks, and keep things moving.
             </p>
 
+
+            <!-- HERO BUTTONS -->
+
             <div class="hero-buttons">
 
                 <a href="#case-studies">
                     VIEW MY WORK
                 </a>
 
-                <a href="#contact">
-                    LET'S CONNECT
-                </a>
+
+                <!-- LET'S CONNECT DROPDOWN -->
+
+                <div class="connect-dropdown">
+
+                    <button
+                        type="button"
+                        class="connect-button"
+                        onclick="toggleConnectMenu()"
+                    >
+                        LET'S CONNECT
+                    </button>
+
+
+                    <div
+                        class="connect-menu"
+                        id="connectMenu"
+                    >
+
+                        <a
+                            href="mailto:fairuziamel22@gmail.com"
+                        >
+                            ✉ EMAIL
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/fairuzia-a-a5903a187"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            in LINKEDIN
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
+
 
             <div class="hero-mark">
                 01 / EXECUTION OPERATIONS
@@ -81,9 +116,9 @@
     </header>
 
 
-    <!-- =====================================================
+    <!-- =========================
          ABOUT
-    ====================================================== -->
+    ========================== -->
 
     <section id="about">
 
@@ -112,9 +147,9 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =========================
          WHAT I DO
-    ====================================================== -->
+    ========================== -->
 
     <section id="services">
 
@@ -125,6 +160,7 @@
             </h2>
 
             <div class="services-grid">
+
 
                 <div class="service-card">
 
@@ -216,9 +252,9 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =========================
          CASE STUDIES
-    ====================================================== -->
+    ========================== -->
 
     <section id="case-studies">
 
@@ -227,6 +263,7 @@
             <h2>
                 Selected Case Studies
             </h2>
+
 
             <div class="case-studies">
 
@@ -278,7 +315,6 @@
 
                 </article>
 
-
             </div>
 
         </div>
@@ -286,9 +322,9 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =========================
          EXPERIENCE
-    ====================================================== -->
+    ========================== -->
 
     <section id="experience">
 
@@ -297,6 +333,7 @@
             <h2>
                 Experience built inside real operations.
             </h2>
+
 
             <div class="experience-list">
 
@@ -308,7 +345,9 @@
                     </h3>
 
                     <p>
-                        <strong>Executive Assistant to Founder · 2020–2024</strong>
+                        <strong>
+                            Executive Assistant to Founder · 2020–2024
+                        </strong>
                     </p>
 
                     <p>
@@ -328,7 +367,9 @@
                     </h3>
 
                     <p>
-                        <strong>Virtual Assistant Tutor · 2022–2024</strong>
+                        <strong>
+                            Virtual Assistant Tutor · 2022–2024
+                        </strong>
                     </p>
 
                     <p>
@@ -347,7 +388,9 @@
                     </h3>
 
                     <p>
-                        <strong>Human Resources Intern · Aug 2024–Feb 2025</strong>
+                        <strong>
+                            Human Resources Intern · Aug 2024–Feb 2025
+                        </strong>
                     </p>
 
                     <p>
@@ -365,7 +408,9 @@
                     </h3>
 
                     <p>
-                        <strong>Retail Operations Associate · 2015–2017</strong>
+                        <strong>
+                            Retail Operations Associate · 2015–2017
+                        </strong>
                     </p>
 
                     <p>
@@ -407,7 +452,6 @@
 
                 </div>
 
-
             </div>
 
         </div>
@@ -415,9 +459,9 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =========================
          CONTACT
-    ====================================================== -->
+    ========================== -->
 
     <section id="contact" class="contact">
 
@@ -436,16 +480,18 @@
             <div class="contact-links">
 
                 <a
+                    href="mailto:fairuziamel22@gmail.com"
+                >
+                    EMAIL
+                </a>
+
+
+                <a
                     href="https://www.linkedin.com/in/fairuzia-a-a5903a187"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    LinkedIn
-                </a>
-
-
-                <a href="mailto:fairuziamel22@gmail.com">
-                    Email
+                    LINKEDIN
                 </a>
 
             </div>
@@ -455,9 +501,9 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- =========================
          FOOTER
-    ====================================================== -->
+    ========================== -->
 
     <footer>
 
@@ -475,6 +521,39 @@
 
     </footer>
 
+
+    <!-- =========================
+         DROPDOWN JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function toggleConnectMenu() {
+
+            const menu = document.getElementById("connectMenu");
+
+            menu.classList.toggle("show");
+
+        }
+
+
+        window.addEventListener("click", function(event) {
+
+            const dropdown =
+                document.querySelector(".connect-dropdown");
+
+            const menu =
+                document.getElementById("connectMenu");
+
+            if (!dropdown.contains(event.target)) {
+
+                menu.classList.remove("show");
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
