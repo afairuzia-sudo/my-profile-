@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Parisienne&family=Playfair+Display:wght@500;600;700&display=swap');
 
-
 /* =========================================================
    RESET
 ========================================================= */
@@ -17,64 +16,53 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    color: #ffffff;
-    background-color: #a992c4;
-
-    min-height: 100vh;
+    color: #f7f3fa;
+    background: #120b18;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
 /* =========================================================
-   DREAMY LAVENDER BACKGROUND
+   BACKGROUND
 ========================================================= */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
+    z-index: -2;
 
-    background-image:
+    background:
         linear-gradient(
-            rgba(91, 55, 125, 0.08),
-            rgba(91, 55, 125, 0.08)
+            rgba(18, 8, 27, 0.68),
+            rgba(18, 8, 27, 0.82)
         ),
         url("https://afairuzia-sudo.github.io/my-profile-/background.jpeg");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-
-    z-index: -2;
 }
 
 body::after {
     content: "";
     position: fixed;
     inset: 0;
+    z-index: -1;
+    pointer-events: none;
 
     background:
         radial-gradient(
-            circle at 50% 30%,
-            rgba(255, 255, 255, 0.12),
-            transparent 42%
+            circle at 50% 25%,
+            rgba(111, 54, 150, 0.30),
+            transparent 45%
         ),
-        linear-gradient(
-            180deg,
-            rgba(65, 35, 90, 0.08),
-            rgba(65, 35, 90, 0.20)
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(72, 30, 104, 0.25),
+            transparent 40%
         );
-
-    z-index: -1;
-    pointer-events: none;
 }
-
 
 /* =========================================================
    NAVBAR
@@ -84,421 +72,257 @@ body::after {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
-    height: 74px;
+    z-index: 100;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 6.5%;
+    padding: 22px 6vw;
 
-    background: rgba(67, 43, 86, 0.28);
-
+    background: rgba(14, 7, 20, 0.58);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-
-    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-logo {
-    width: 43px;
-    height: 43px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.40);
-
-    background: rgba(255, 255, 255, 0.10);
-
-    color: #ffffff;
-
-    font-size: 13px;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 2px;
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
-    gap: 35px;
-
+    gap: 30px;
     list-style: none;
 }
 
 .nav-links a {
-    position: relative;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
 
-    color: rgba(255, 255, 255, 0.88);
-
-    font-size: 12px;
-    font-weight: 600;
-
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
-
-    transition: 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 .nav-links a:hover {
-    color: #ffffff;
+    color: #d9b8ef;
 }
-
-.nav-links a::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 1px;
-
-    background: #ffffff;
-
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
-    position: relative;
-
-    width: 100%;
     min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 105px 7% 70px;
+    padding: 130px 7vw 90px;
 
     text-align: center;
 }
 
 .hero-content {
     width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
+    max-width: 1050px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
+/* Small label */
 
 .hero-eyebrow {
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 
-    color: rgba(255, 255, 255, 0.82);
-
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 3px;
 
-    letter-spacing: 3.2px;
-    text-transform: uppercase;
+    color: #c9a9dd;
 }
 
-
-/* =========================================================
-   NAME
-========================================================= */
+/* NAME */
 
 .hero h1 {
-    margin: 0 0 17px;
-
-    color: #ffffff;
+    margin: 0 0 20px;
 
     font-family: "Parisienne", cursive;
-
-    font-size: clamp(68px, 7.5vw, 105px);
-
+    font-size: clamp(62px, 7vw, 88px);
     font-weight: 400;
-    line-height: 0.84;
+    line-height: 0.95;
 
-    letter-spacing: 0;
+    color: #fffaff;
 
     text-shadow:
-        0 5px 25px rgba(54, 25, 75, 0.20);
+        0 0 35px rgba(155, 91, 190, 0.25);
 }
 
-
-/* =========================================================
-   MAIN HEADLINE
-========================================================= */
+/* MAIN HEADLINE */
 
 .hero-title {
-    max-width: 780px;
+    max-width: 850px;
 
-    margin: 0 auto 19px;
-
-    color: #ffffff;
+    margin-bottom: 20px;
 
     font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 500;
+    line-height: 1.2;
 
-    font-size: clamp(27px, 3.1vw, 40px);
-
-    font-weight: 600;
-    line-height: 1.16;
-
-    letter-spacing: -0.5px;
-
-    text-shadow:
-        0 4px 18px rgba(54, 25, 75, 0.18);
+    color: #f7f1fa;
 }
 
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
+/* DESCRIPTION */
 
 .hero-description {
     max-width: 650px;
 
-    margin: 0 auto 27px;
+    margin-bottom: 30px;
 
-    color: rgba(255, 255, 255, 0.88);
+    font-size: 15px;
+    line-height: 1.8;
 
-    font-size: 14px;
-    font-weight: 400;
-
-    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.68);
 }
 
-
 /* =========================================================
-   HERO BUTTONS
+   BUTTONS
 ========================================================= */
 
 .hero-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 14px;
 
-    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.hero-buttons a {
+.hero-buttons a,
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-width: 150px;
+    min-height: 44px;
+    padding: 0 24px;
 
-    padding: 12px 22px;
+    border-radius: 999px;
 
-    border-radius: 50px;
+    text-decoration: none;
 
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
-
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .hero-buttons a:first-child {
-    color: #4b315c;
-
-    background: rgba(255, 255, 255, 0.92);
-
-    border: 1px solid rgba(255, 255, 255, 0.92);
+    background: #e9d7f4;
+    color: #24132d;
 }
 
 .hero-buttons a:last-child {
-    color: #ffffff;
-
-    background: rgba(112, 76, 139, 0.30);
-
-    border: 1px solid rgba(255, 255, 255, 0.45);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 195, 241, 0.45);
+    background: rgba(55, 24, 70, 0.45);
+    color: #f5eafa;
 }
 
 .hero-buttons a:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(58, 28, 80, 0.22);
+    transform: translateY(-2px);
 }
-
 
 /* =========================================================
    HERO MARK
 ========================================================= */
 
 .hero-mark {
-    position: absolute;
+    margin-top: 42px;
 
-    right: 6.5%;
-    bottom: 38px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    gap: 4px;
-
-    color: rgba(255, 255, 255, 0.65);
-
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
 }
-
-.hero-mark::before {
-    content: "";
-
-    width: 38px;
-    height: 1px;
-
-    margin-bottom: 4px;
-
-    background: rgba(255, 255, 255, 0.55);
-}
-
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
 section {
-    position: relative;
-
-    width: 100%;
-
-    padding: 100px 7%;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(92, 62, 116, 0.34),
-            rgba(124, 91, 151, 0.22)
-        );
-
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 105px 7vw;
 }
 
-section::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 7%;
-
-    width: 86%;
-    height: 1px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.18),
-        transparent
-    );
+section:nth-of-type(even) {
+    background: rgba(20, 9, 28, 0.38);
 }
 
+section:nth-of-type(odd) {
+    background: rgba(35, 14, 47, 0.28);
+}
+
+section > div {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* =========================================================
-   CONTAINERS
-========================================================= */
-
-.container,
-.about-container,
-.services-container,
-.case-studies-container,
-.experience-container,
-.contact-container {
-    width: 100%;
-    max-width: 1160px;
-
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   SECTION TITLES
+   SECTION HEADINGS
 ========================================================= */
 
 section h2 {
-    margin-bottom: 22px;
-
-    color: #ffffff;
+    margin-bottom: 20px;
 
     font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.15;
 
-    font-size: clamp(36px, 4.5vw, 58px);
-
-    font-weight: 600;
-    line-height: 1.1;
-
-    letter-spacing: -0.8px;
+    color: #f8f1fa;
 }
 
-.section-label {
-    display: block;
+section h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.25;
 
-    margin-bottom: 15px;
-
-    color: rgba(255, 255, 255, 0.65);
-
-    font-size: 9px;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    color: #f8f1fa;
 }
 
+section p {
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.68);
+}
 
 /* =========================================================
    ABOUT
 ========================================================= */
 
-.about {
-    min-height: 70vh;
-
-    display: flex;
-    align-items: center;
-}
-
 .about-content {
-    max-width: 900px;
+    max-width: 780px;
 }
 
-.about p {
-    color: rgba(255, 255, 255, 0.86);
-
-    font-size: 15px;
-    line-height: 1.85;
+.about-content p {
+    max-width: 720px;
 }
-
 
 /* =========================================================
    SERVICES
@@ -506,405 +330,237 @@ section h2 {
 
 .services-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
 
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
 .service-card {
-    min-height: 200px;
-
     padding: 28px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.16),
-            rgba(255, 255, 255, 0.06)
-        );
+    background: rgba(52, 24, 67, 0.42);
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(215, 177, 235, 0.13);
+    border-radius: 18px;
 
-    border-radius: 20px;
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 15px 45px rgba(50, 25, 70, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.21),
-            rgba(255, 255, 255, 0.08)
-        );
+    transform: translateY(-4px);
+    border-color: rgba(215, 177, 235, 0.3);
 }
 
 .service-card h3 {
-    margin-bottom: 11px;
-
-    color: #ffffff;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 22px;
-    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 21px;
 }
 
 .service-card p {
-    color: rgba(255, 255, 255, 0.75);
-
-    font-size: 13px;
-    line-height: 1.75;
+    font-size: 14px;
 }
-
 
 /* =========================================================
    CASE STUDIES
 ========================================================= */
 
 .case-studies {
-    min-height: 75vh;
-}
-
-.case-grid {
     display: grid;
+    gap: 22px;
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
-.case-card {
-    padding: 30px;
+.case-study {
+    padding: 32px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0.05)
-        );
+    background: rgba(43, 18, 57, 0.48);
 
-    border: 1px solid rgba(255, 255, 255, 0.17);
-
+    border: 1px solid rgba(220, 184, 239, 0.14);
     border-radius: 20px;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        transform 0.3s ease,
-        border 0.3s ease;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
-.case-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(255, 255, 255, 0.30);
+.case-study h3 {
+    margin-bottom: 12px;
+    font-size: 26px;
 }
 
-.case-number {
-    display: block;
-
-    margin-bottom: 22px;
-
-    color: rgba(255, 255, 255, 0.50);
-
-    font-size: 9px;
-    font-weight: 600;
-
-    letter-spacing: 2px;
+.case-study p {
+    max-width: 850px;
 }
-
-.case-card h3 {
-    margin-bottom: 15px;
-
-    color: #ffffff;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 22px;
-    line-height: 1.3;
-}
-
-.case-card p {
-    color: rgba(255, 255, 255, 0.72);
-
-    font-size: 13px;
-    line-height: 1.75;
-}
-
 
 /* =========================================================
    EXPERIENCE
 ========================================================= */
 
 .experience-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 20px;
 
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
 .experience-item {
-    display: grid;
+    padding: 26px 28px;
 
-    grid-template-columns: 180px 1fr;
+    border-left: 2px solid rgba(191, 135, 218, 0.55);
 
-    gap: 40px;
-
-    padding: 32px 0;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.experience-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.experience-date {
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 9px;
-    font-weight: 600;
-
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
+    background: rgba(42, 18, 55, 0.34);
 }
 
 .experience-item h3 {
     margin-bottom: 5px;
-
-    color: #ffffff;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 24px;
-}
-
-.experience-item h4 {
-    margin-bottom: 12px;
-
-    color: rgba(255, 255, 255, 0.62);
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
+    font-size: 23px;
 }
 
 .experience-item p {
-    max-width: 760px;
-
-    color: rgba(255, 255, 255, 0.74);
-
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 14px;
 }
-
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact {
-    min-height: 65vh;
-
-    display: flex;
-    align-items: center;
-
     text-align: center;
 }
 
-.contact-container {
+.contact > div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contact h2 {
-    max-width: 760px;
-}
-
 .contact p {
-    max-width: 620px;
-
-    margin-bottom: 25px;
-
-    color: rgba(255, 255, 255, 0.74);
-
-    font-size: 14px;
-    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 28px;
 }
 
 .contact-links {
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    gap: 12px;
-
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .contact-links a {
-    padding: 11px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    padding: 12px 22px;
 
-    border-radius: 50px;
+    border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(64, 29, 80, 0.55);
+    border: 1px solid rgba(220, 184, 239, 0.18);
 
-    color: #ffffff;
+    color: #f7effa;
+    text-decoration: none;
 
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 13px;
 
-    letter-spacing: 1px;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    transition: 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .contact-links a:hover {
-    transform: translateY(-3px);
-
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(91, 45, 112, 0.7);
+    transform: translateY(-2px);
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-    padding: 30px 7%;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    background: rgba(58, 35, 76, 0.35);
+    padding: 35px 7vw;
 
     text-align: center;
+
+    background: rgba(10, 5, 14, 0.82);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 footer p {
-    color: rgba(255, 255, 255, 0.52);
+    font-size: 11px;
+    letter-spacing: 1.5px;
 
-    font-size: 9px;
-
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     .navbar {
-        padding: 0 5%;
+        padding: 18px 5vw;
     }
 
     .nav-links {
-        gap: 17px;
+        gap: 15px;
     }
 
     .nav-links a {
-        font-size: 9px;
-        letter-spacing: 1px;
+        font-size: 11px;
     }
 
     .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .hero-mark {
-        display: none;
-    }
-
-    .services-grid,
-    .case-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    section::before {
-        left: 5%;
-        width: 90%;
-    }
-}
-
-
-@media (max-width: 650px) {
-
-    .navbar {
-        height: 67px;
-    }
-
-    .nav-logo {
-        width: 36px;
-        height: 36px;
-        font-size: 10px;
-    }
-
-    .nav-links {
-        gap: 9px;
-    }
-
-    .nav-links a {
-        font-size: 7px;
-        letter-spacing: 0.5px;
-    }
-
-    .hero {
-        min-height: 100svh;
-
-        padding:
-            95px
-            6%
-            55px;
-    }
-
-    .hero-eyebrow {
-        font-size: 7px;
-        letter-spacing: 2px;
+        padding: 120px 6vw 80px;
     }
 
     .hero h1 {
-        font-size: clamp(58px, 17vw, 82px);
+        font-size: clamp(55px, 15vw, 72px);
+    }
+
+    .hero-title {
+        font-size: 27px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 80px 6vw;
+    }
+
+    section h2 {
+        font-size: 38px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 58px;
     }
 
     .hero-title {
         font-size: 25px;
-    }
-
-    .hero-description {
-        font-size: 13px;
     }
 
     .hero-buttons {
@@ -914,39 +570,6 @@ footer p {
 
     .hero-buttons a {
         width: 100%;
-        max-width: 250px;
-    }
-
-    section {
-        padding: 80px 6%;
-    }
-
-    section h2 {
-        font-size: 38px;
-    }
-
-    .services-grid,
-    .case-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .experience-item h3 {
-        font-size: 22px;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .contact-links a {
-        width: 100%;
-        max-width: 270px;
-        text-align: center;
+        max-width: 260px;
     }
 }
