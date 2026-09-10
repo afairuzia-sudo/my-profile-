@@ -16,14 +16,15 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    color: #f7f3fa;
-    background: #120b18;
+    color: #f8f2fb;
+    background: #100814;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+
 /* =========================================================
-   BACKGROUND
+   BLACK AMETHYST BACKGROUND
 ========================================================= */
 
 body::before {
@@ -34,8 +35,8 @@ body::before {
 
     background:
         linear-gradient(
-            rgba(18, 8, 27, 0.68),
-            rgba(18, 8, 27, 0.82)
+            rgba(20, 7, 29, 0.62),
+            rgba(12, 5, 17, 0.82)
         ),
         url("https://afairuzia-sudo.github.io/my-profile-/background.jpeg");
 
@@ -54,15 +55,21 @@ body::after {
     background:
         radial-gradient(
             circle at 50% 25%,
-            rgba(111, 54, 150, 0.30),
-            transparent 45%
+            rgba(126, 62, 163, 0.32),
+            transparent 46%
         ),
         radial-gradient(
-            circle at 80% 80%,
-            rgba(72, 30, 104, 0.25),
+            circle at 20% 70%,
+            rgba(88, 38, 119, 0.25),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(69, 25, 94, 0.28),
             transparent 40%
         );
 }
+
 
 /* =========================================================
    NAVBAR
@@ -79,18 +86,18 @@ body::after {
     align-items: center;
     justify-content: space-between;
 
-    padding: 22px 6vw;
+    padding: 21px 6vw;
 
-    background: rgba(14, 7, 20, 0.58);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(12, 5, 17, 0.68);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(218, 180, 238, 0.08);
 }
 
 .nav-logo {
     font-family: "Playfair Display", serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
     letter-spacing: 2px;
 }
@@ -98,21 +105,24 @@ body::after {
 .nav-links {
     display: flex;
     gap: 30px;
+
     list-style: none;
 }
 
 .nav-links a {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
-    font-size: 13px;
+
+    font-size: 12px;
     font-weight: 500;
 
     transition: color 0.25s ease;
 }
 
 .nav-links a:hover {
-    color: #d9b8ef;
+    color: #d9aef0;
 }
+
 
 /* =========================================================
    HERO
@@ -125,204 +135,337 @@ body::after {
     align-items: center;
     justify-content: center;
 
-    padding: 130px 7vw 90px;
+    padding: 100px 7vw 70px;
 
     text-align: center;
 }
 
 .hero-content {
     width: 100%;
-    max-width: 1050px;
+    max-width: 900px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    /*
+       Push the entire hero slightly downward
+       so the name doesn't sit too high.
+    */
+    transform: translateY(34px);
 }
 
-/* Small label */
+
+/* EYEBROW */
 
 .hero-eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
-    font-size: 11px;
+    color: #c99be5;
+
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 3px;
-
-    color: #c9a9dd;
 }
+
 
 /* NAME */
 
 .hero h1 {
-    margin: 0 0 20px;
+    margin-bottom: 18px;
 
     font-family: "Parisienne", cursive;
-    font-size: clamp(62px, 7vw, 88px);
+
+    font-size: clamp(58px, 6.5vw, 82px);
     font-weight: 400;
     line-height: 0.95;
 
-    color: #fffaff;
+    color: #fff9ff;
 
     text-shadow:
-        0 0 35px rgba(155, 91, 190, 0.25);
+        0 0 30px rgba(151, 79, 188, 0.30);
 }
+
 
 /* MAIN HEADLINE */
 
 .hero-title {
-    max-width: 850px;
+    max-width: 760px;
 
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 
     font-family: "Playfair Display", serif;
-    font-size: clamp(28px, 3vw, 38px);
-    font-weight: 500;
-    line-height: 1.2;
 
-    color: #f7f1fa;
+    font-size: clamp(25px, 2.6vw, 35px);
+    font-weight: 500;
+    line-height: 1.22;
+
+    color: #f8f0fb;
 }
+
 
 /* DESCRIPTION */
 
 .hero-description {
-    max-width: 650px;
+    max-width: 610px;
 
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.75;
 
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.66);
 }
 
+
 /* =========================================================
-   BUTTONS
+   HERO BUTTONS
 ========================================================= */
 
 .hero-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+
+    gap: 13px;
 
     flex-wrap: wrap;
 }
 
-.hero-buttons a,
-.btn {
+.hero-buttons > a,
+.connect-button {
+    min-height: 43px;
+
+    padding: 0 23px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 44px;
-    padding: 0 24px;
-
     border-radius: 999px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* VIEW MY WORK */
+
+.hero-buttons > a:first-child {
+    background: #ead8f4;
+    color: #281431;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-buttons > a:first-child:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONNECT DROPDOWN
+========================================================= */
+
+.connect-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.connect-button {
+    border: 1px solid rgba(213, 163, 235, 0.42);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(122, 58, 158, 0.95),
+            rgba(48, 19, 63, 0.98)
+        );
+
+    color: #fff7ff;
+
+    box-shadow:
+        0 8px 28px rgba(63, 25, 82, 0.35);
+}
+
+.connect-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 34px rgba(92, 41, 120, 0.48);
+}
+
+
+/* DROPDOWN */
+
+.connect-menu {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 170px;
+
+    padding: 7px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(116, 57, 151, 0.98),
+            rgba(25, 9, 34, 0.99)
+        );
+
+    border: 1px solid rgba(224, 188, 240, 0.22);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.48),
+        0 0 35px rgba(111, 52, 143, 0.22);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-7px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.connect-menu.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.connect-menu a {
+    display: block;
+
+    padding: 11px 13px;
+
+    border-radius: 9px;
+
+    color: #fff7ff;
 
     text-decoration: none;
 
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.5px;
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
-.hero-buttons a:first-child {
-    background: #e9d7f4;
-    color: #24132d;
+.connect-menu a:hover {
+    background: rgba(234, 204, 247, 0.15);
+    color: #ffffff;
 }
 
-.hero-buttons a:last-child {
-    border: 1px solid rgba(226, 195, 241, 0.45);
-    background: rgba(55, 24, 70, 0.45);
-    color: #f5eafa;
-}
-
-.hero-buttons a:hover {
-    transform: translateY(-2px);
-}
 
 /* =========================================================
    HERO MARK
 ========================================================= */
 
 .hero-mark {
-    margin-top: 42px;
+    margin-top: 32px;
 
-    font-size: 10px;
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 9px;
     letter-spacing: 2px;
-
-    color: rgba(255, 255, 255, 0.42);
 }
+
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
 section {
-    padding: 105px 7vw;
+    padding: 92px 7vw;
 }
 
 section:nth-of-type(even) {
-    background: rgba(20, 9, 28, 0.38);
+    background: rgba(17, 7, 24, 0.52);
 }
 
 section:nth-of-type(odd) {
-    background: rgba(35, 14, 47, 0.28);
+    background: rgba(43, 17, 57, 0.28);
 }
 
 section > div {
-    max-width: 1150px;
+    max-width: 1120px;
+
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /* =========================================================
    SECTION HEADINGS
 ========================================================= */
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 
     font-family: "Playfair Display", serif;
-    font-size: clamp(38px, 4vw, 52px);
-    font-weight: 500;
-    line-height: 1.15;
 
-    color: #f8f1fa;
+    font-size: clamp(31px, 3vw, 42px);
+    font-weight: 500;
+
+    line-height: 1.16;
+
+    color: #f8f1fb;
 }
 
 section h3 {
     font-family: "Playfair Display", serif;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 1.25;
 
-    color: #f8f1fa;
+    font-size: 21px;
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    color: #f8f1fb;
 }
 
 section p {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.78;
 
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.65);
 }
+
 
 /* =========================================================
    ABOUT
 ========================================================= */
 
 .about-content {
-    max-width: 780px;
+    max-width: 730px;
 }
 
 .about-content p {
-    max-width: 720px;
+    max-width: 700px;
 }
+
 
 /* =========================================================
    SERVICES
@@ -330,22 +473,30 @@ section p {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
 
-    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 17px;
+
+    margin-top: 36px;
 }
 
 .service-card {
-    padding: 28px;
+    padding: 25px;
 
-    background: rgba(52, 24, 67, 0.42);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(91, 42, 116, 0.43),
+            rgba(27, 10, 37, 0.50)
+        );
 
-    border: 1px solid rgba(215, 177, 235, 0.13);
-    border-radius: 18px;
+    border: 1px solid rgba(217, 178, 235, 0.12);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-radius: 17px;
+
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
 
     transition:
         transform 0.25s ease,
@@ -354,17 +505,20 @@ section p {
 
 .service-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(215, 177, 235, 0.3);
+
+    border-color: rgba(216, 171, 237, 0.27);
 }
 
 .service-card h3 {
-    margin-bottom: 10px;
-    font-size: 21px;
+    margin-bottom: 8px;
+
+    font-size: 19px;
 }
 
 .service-card p {
-    font-size: 14px;
+    font-size: 13px;
 }
+
 
 /* =========================================================
    CASE STUDIES
@@ -372,31 +526,42 @@ section p {
 
 .case-studies {
     display: grid;
-    gap: 22px;
 
-    margin-top: 40px;
+    gap: 18px;
+
+    margin-top: 36px;
 }
 
 .case-study {
-    padding: 32px;
+    padding: 28px;
 
-    background: rgba(43, 18, 57, 0.48);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(78, 34, 101, 0.46),
+            rgba(24, 9, 33, 0.52)
+        );
 
-    border: 1px solid rgba(220, 184, 239, 0.14);
-    border-radius: 20px;
+    border: 1px solid rgba(218, 178, 236, 0.13);
+
+    border-radius: 18px;
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
 
 .case-study h3 {
-    margin-bottom: 12px;
-    font-size: 26px;
+    margin-bottom: 9px;
+
+    font-size: 22px;
 }
 
 .case-study p {
     max-width: 850px;
+
+    font-size: 14px;
 }
+
 
 /* =========================================================
    EXPERIENCE
@@ -404,27 +569,32 @@ section p {
 
 .experience-list {
     display: grid;
-    gap: 20px;
 
-    margin-top: 40px;
+    gap: 17px;
+
+    margin-top: 36px;
 }
 
 .experience-item {
-    padding: 26px 28px;
+    padding: 23px 26px;
 
-    border-left: 2px solid rgba(191, 135, 218, 0.55);
+    background: rgba(40, 16, 53, 0.38);
 
-    background: rgba(42, 18, 55, 0.34);
+    border-left: 2px solid rgba(174, 103, 209, 0.62);
+
+    border-radius: 0 12px 12px 0;
 }
 
 .experience-item h3 {
     margin-bottom: 5px;
-    font-size: 23px;
+
+    font-size: 20px;
 }
 
 .experience-item p {
-    font-size: 14px;
+    font-size: 13px;
 }
+
 
 /* =========================================================
    CONTACT
@@ -441,62 +611,89 @@ section p {
 }
 
 .contact p {
-    max-width: 600px;
-    margin-bottom: 28px;
+    max-width: 590px;
+
+    margin-bottom: 25px;
 }
 
 .contact-links {
     display: flex;
+
     justify-content: center;
-    gap: 15px;
+
+    gap: 12px;
+
     flex-wrap: wrap;
 }
 
 .contact-links a {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    padding: 12px 22px;
+    min-height: 42px;
+
+    padding: 0 21px;
 
     border-radius: 999px;
 
-    background: rgba(64, 29, 80, 0.55);
-    border: 1px solid rgba(220, 184, 239, 0.18);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(101, 47, 130, 0.65),
+            rgba(34, 13, 45, 0.72)
+        );
 
-    color: #f7effa;
+    border: 1px solid rgba(219, 176, 237, 0.17);
+
+    color: #f8f0fb;
+
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 600;
 
-    transition: all 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
 .contact-links a:hover {
-    background: rgba(91, 45, 112, 0.7);
     transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123, 60, 157, 0.78),
+            rgba(48, 18, 62, 0.82)
+        );
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-    padding: 35px 7vw;
+    padding: 32px 7vw;
 
     text-align: center;
 
-    background: rgba(10, 5, 14, 0.82);
+    background: rgba(8, 4, 11, 0.88);
 
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 footer p {
-    font-size: 11px;
+    margin: 3px 0;
+
+    font-size: 10px;
     letter-spacing: 1.5px;
 
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.38);
 }
+
 
 /* =========================================================
    MOBILE
@@ -513,15 +710,19 @@ footer p {
     }
 
     .nav-links a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .hero {
-        padding: 120px 6vw 80px;
+        padding: 110px 6vw 70px;
+    }
+
+    .hero-content {
+        transform: translateY(25px);
     }
 
     .hero h1 {
-        font-size: clamp(55px, 15vw, 72px);
+        font-size: 58px;
     }
 
     .hero-title {
@@ -533,11 +734,15 @@ footer p {
     }
 
     section {
-        padding: 80px 6vw;
+        padding: 75px 6vw;
     }
 
     section h2 {
-        font-size: 38px;
+        font-size: 32px;
+    }
+
+    section h3 {
+        font-size: 20px;
     }
 
     .services-grid {
@@ -545,9 +750,18 @@ footer p {
     }
 
     .case-study {
-        padding: 25px;
+        padding: 24px;
+    }
+
+    .connect-menu {
+        right: 0;
     }
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 500px) {
 
@@ -555,21 +769,32 @@ footer p {
         display: none;
     }
 
+    .hero-content {
+        transform: translateY(18px);
+    }
+
     .hero h1 {
-        font-size: 58px;
+        font-size: 54px;
     }
 
     .hero-title {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .hero-buttons {
-        flex-direction: column;
         width: 100%;
+
+        flex-direction: column;
     }
 
-    .hero-buttons a {
+    .hero-buttons > a,
+    .connect-dropdown,
+    .connect-button {
         width: 100%;
         max-width: 260px;
+    }
+
+    .connect-menu {
+        width: 100%;
     }
 }
