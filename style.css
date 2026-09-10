@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 /* =========================================================
    RESET
@@ -18,13 +17,24 @@ html {
 body {
     font-family: 'DM Sans', sans-serif;
     color: #faf8ff;
-    background:
-        linear-gradient(
-            rgba(18, 12, 30, 0.18),
-            rgba(18, 12, 30, 0.48)
-        ),
-        url('./background.jpeg') center center / cover fixed no-repeat;
     background-color: #171321;
+
+    /*
+       BACKGROUND IMAGE
+       Dibuat cukup jelas, tidak ditutup overlay tebal.
+    */
+    background-image:
+        linear-gradient(
+            rgba(20, 12, 34, 0.08),
+            rgba(20, 12, 34, 0.22)
+        ),
+        url('https://raw.githubusercontent.com/afairuzia-sudo/my-profile-/main/background.jpeg');
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     line-height: 1.7;
     min-height: 100vh;
 }
@@ -32,11 +42,6 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -50,47 +55,37 @@ img {
 ========================================================= */
 
 :root {
-    --lavender: #d8c7ff;
-    --lavender-soft: #c7b1f4;
+    --lavender: #dfd0ff;
+    --lavender-soft: #c9b4f2;
     --purple: #9476cf;
-    --purple-dark: #624c91;
 
-    --white: #faf8ff;
-    --muted: #d8d0e5;
+    --white: #ffffff;
+    --muted: #e4ddec;
 
-    --deep: #171321;
-    --deep-soft: #241c31;
+    --dark: #171321;
+    --dark-soft: #241b31;
 
-    --glass: rgba(27, 19, 42, 0.58);
-    --glass-light: rgba(255, 255, 255, 0.08);
+    --glass: rgba(28, 19, 43, 0.55);
+    --glass-strong: rgba(25, 16, 39, 0.72);
 
-    --border: rgba(220, 205, 255, 0.20);
-    --border-light: rgba(255, 255, 255, 0.12);
+    --border: rgba(235, 224, 255, 0.22);
 
     --shadow:
-        0 20px 60px rgba(8, 4, 15, 0.30);
+        0 20px 60px rgba(5, 2, 12, 0.28);
 }
 
 
 /* =========================================================
-   GLOBAL CONTAINER
-========================================================= */
-
-.container {
-    width: min(1120px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   NAVIGATION
+   NAVBAR
 ========================================================= */
 
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
     display: flex;
@@ -99,43 +94,52 @@ img {
 
     padding: 18px 5%;
 
-    background: rgba(18, 12, 30, 0.58);
+    background: rgba(22, 14, 34, 0.50);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-family: Georgia, serif;
+
+    font-size: 1.05rem;
     font-weight: 700;
+
     letter-spacing: 2px;
+
     color: var(--lavender);
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 30px;
+
     list-style: none;
 }
 
 .nav-links a {
     position: relative;
 
-    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.76rem;
     font-weight: 500;
+
     letter-spacing: 0.8px;
+
     text-transform: uppercase;
 
-    color: rgba(250, 248, 255, 0.78);
-
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-links a::after {
-    content: '';
+    content: "";
+
     position: absolute;
 
     left: 0;
@@ -146,11 +150,11 @@ img {
 
     background: var(--lavender);
 
-    transition: width 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .nav-links a:hover::after {
@@ -167,59 +171,96 @@ img {
 
     display: flex;
     align-items: center;
-
-    padding: 140px 5% 100px;
+    justify-content: center;
 
     position: relative;
+
+    padding:
+        140px 5%
+        100px;
+
     overflow: hidden;
+
+    text-align: center;
 }
 
+/*
+   VERY LIGHT glow.
+   Tidak menutupi background.
+*/
+
 .hero::before {
-    content: '';
+    content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
         radial-gradient(
-            circle at 75% 30%,
-            rgba(190, 160, 255, 0.16),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 15% 75%,
-            rgba(170, 130, 230, 0.12),
-            transparent 28%
+            circle at 50% 35%,
+            rgba(210, 185, 255, 0.10),
+            transparent 40%
         );
 
     pointer-events: none;
 }
 
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
 .hero-content {
     width: min(850px, 100%);
+
+    margin: 0 auto;
+
     position: relative;
+
     z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .eyebrow {
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     color: var(--lavender);
-    font-size: 0.72rem;
+
+    font-size: 0.70rem;
+
     font-weight: 600;
+
     letter-spacing: 2.5px;
+
     text-transform: uppercase;
 }
 
-.eyebrow::before {
-    content: '';
-    width: 28px;
+.eyebrow::before,
+.eyebrow::after {
+    content: "";
+
+    width: 24px;
+
     height: 1px;
 
     background: var(--lavender);
+
+    opacity: 0.75;
 }
 
 
@@ -227,23 +268,35 @@ img {
    NAME
 ========================================================= */
 
-.hero h1 {
-    font-family: 'Allura', cursive;
+/*
+   Nama sengaja dibuat lebih kecil.
+   Script font supaya terasa personal/editorial.
+*/
 
-    /* Sengaja dibuat lebih kecil & elegant */
-    font-size: clamp(3.2rem, 6vw, 5.4rem);
+.hero h1 {
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size: clamp(
+        3.2rem,
+        6vw,
+        5.2rem
+    );
 
     font-weight: 400;
+
     line-height: 0.95;
 
-    letter-spacing: 1px;
+    letter-spacing: 0;
 
     color: #ffffff;
 
-    text-shadow:
-        0 8px 35px rgba(0, 0, 0, 0.35);
+    margin-bottom: 25px;
 
-    margin-bottom: 28px;
+    text-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -254,27 +307,47 @@ img {
 .hero-title {
     max-width: 760px;
 
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 
-    font-size: clamp(1.65rem, 3vw, 2.65rem);
-    line-height: 1.2;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(
+        1.65rem,
+        3vw,
+        2.55rem
+    );
 
     font-weight: 500;
 
-    color: var(--white);
+    line-height: 1.25;
 
-    margin-bottom: 22px;
+    color: #ffffff;
+
+    text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.30);
 }
 
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
 .hero-description {
-    max-width: 680px;
+    max-width: 690px;
+
+    margin-bottom: 32px;
 
     color: var(--muted);
 
-    font-size: 1rem;
-    line-height: 1.9;
+    font-size: 0.98rem;
 
-    margin-bottom: 32px;
+    line-height: 1.85;
+
+    text-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -284,53 +357,67 @@ img {
 
 .hero-buttons {
     display: flex;
+
+    justify-content: center;
     align-items: center;
+
     flex-wrap: wrap;
+
     gap: 14px;
 }
 
 .hero-buttons a {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     min-height: 48px;
-    padding: 0 22px;
+
+    padding:
+        0 24px;
 
     border-radius: 999px;
 
-    font-size: 0.82rem;
+    font-size: 0.80rem;
+
     font-weight: 600;
-    letter-spacing: 0.5px;
+
+    letter-spacing: 0.4px;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 .hero-buttons a:first-child {
     background: var(--lavender);
-    color: #21172f;
+
+    color: #251a35;
 
     box-shadow:
-        0 10px 35px rgba(180, 150, 240, 0.22);
+        0 12px 35px
+        rgba(190, 160, 245, 0.25);
 }
 
 .hero-buttons a:first-child:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 14px 40px rgba(180, 150, 240, 0.34);
+        0 16px 45px
+        rgba(190, 160, 245, 0.38);
 }
 
 .hero-buttons a:last-child {
-    border: 1px solid var(--border);
+    background:
+        rgba(255, 255, 255, 0.07);
 
-    background: rgba(255, 255, 255, 0.05);
+    border:
+        1px solid
+        rgba(235, 224, 255, 0.28);
 
-    color: var(--white);
+    color: #ffffff;
 
     backdrop-filter: blur(10px);
 }
@@ -338,9 +425,11 @@ img {
 .hero-buttons a:last-child:hover {
     transform: translateY(-3px);
 
-    border-color: rgba(216, 199, 255, 0.45);
+    background:
+        rgba(255, 255, 255, 0.12);
 
-    background: rgba(255, 255, 255, 0.09);
+    border-color:
+        rgba(235, 224, 255, 0.45);
 }
 
 
@@ -352,11 +441,11 @@ img {
     position: absolute;
 
     right: 5%;
-    bottom: 12%;
-
-    z-index: 1;
+    bottom: 9%;
 
     text-align: right;
+
+    z-index: 2;
 
     opacity: 0.65;
 }
@@ -364,12 +453,14 @@ img {
 .hero-mark span:first-child {
     display: block;
 
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-family: Georgia, serif;
+
+    font-size: 3.2rem;
 
     line-height: 1;
 
-    color: rgba(216, 199, 255, 0.35);
+    color:
+        rgba(235, 220, 255, 0.45);
 }
 
 .hero-mark span:last-child {
@@ -377,11 +468,14 @@ img {
 
     margin-top: 8px;
 
-    font-size: 0.62rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color:
+        rgba(255, 255, 255, 0.60);
 
-    color: rgba(250, 248, 255, 0.5);
+    font-size: 0.60rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 
@@ -392,54 +486,87 @@ img {
 .section {
     position: relative;
 
-    padding: 110px 5%;
+    padding:
+        110px 5%;
 
-    background: rgba(16, 11, 27, 0.30);
+    background:
+        rgba(18, 11, 30, 0.60);
 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 }
 
 .section:nth-of-type(even) {
-    background: rgba(25, 17, 39, 0.42);
+    background:
+        rgba(29, 18, 44, 0.68);
 }
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
 
 .section-label {
     margin-bottom: 14px;
 
     color: var(--lavender);
 
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+
     font-weight: 600;
+
     letter-spacing: 2.5px;
+
     text-transform: uppercase;
 }
 
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
 .section-title {
-    max-width: 720px;
+    max-width: 760px;
 
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 25px;
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1.15;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
 
     font-weight: 500;
 
-    color: var(--white);
+    line-height: 1.18;
 
-    margin-bottom: 28px;
+    color: #ffffff;
 }
 
+
+/* =========================================================
+   SECTION CONTENT
+========================================================= */
+
 .section-content {
-    max-width: 780px;
+    max-width: 800px;
 }
 
 .section-content p {
+    margin-bottom: 18px;
+
     color: var(--muted);
 
-    font-size: 0.98rem;
-    line-height: 1.9;
+    font-size: 0.94rem;
 
-    margin-bottom: 18px;
+    line-height: 1.9;
 }
 
 
@@ -450,7 +577,8 @@ img {
 .services-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 18px;
 
@@ -464,17 +592,14 @@ img {
 
     padding: 30px;
 
-    border: 1px solid var(--border);
+    background:
+        rgba(28, 18, 43, 0.66);
+
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.025)
-        ),
-        var(--glass);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -484,55 +609,58 @@ img {
     overflow: hidden;
 
     transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        background 0.35s ease;
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
 .service-card::before {
-    content: '';
+    content: "";
 
     position: absolute;
 
     top: 0;
     left: 0;
 
-    width: 50px;
+    width: 55px;
     height: 2px;
 
-    background: var(--lavender);
+    background:
+        var(--lavender);
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
-    border-color: rgba(216, 199, 255, 0.38);
+    border-color:
+        rgba(235, 220, 255, 0.40);
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.11),
-            rgba(255, 255, 255, 0.035)
-        ),
-        rgba(27, 19, 42, 0.68);
+        rgba(35, 23, 53, 0.74);
 }
 
 .service-card h3 {
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 13px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 1.25rem;
+
     font-weight: 600;
 
-    color: var(--white);
-
-    margin-bottom: 14px;
+    color: #ffffff;
 }
 
 .service-card p {
     color: var(--muted);
 
-    font-size: 0.88rem;
-    line-height: 1.75;
+    font-size: 0.86rem;
+
+    line-height: 1.8;
 }
 
 
@@ -543,7 +671,7 @@ img {
 .case-studies {
     display: grid;
 
-    gap: 24px;
+    gap: 22px;
 
     margin-top: 45px;
 }
@@ -551,17 +679,21 @@ img {
 .case-study {
     display: grid;
 
-    grid-template-columns: 90px 1fr;
+    grid-template-columns:
+        80px 1fr;
 
     gap: 28px;
 
-    padding: 34px;
+    padding: 32px;
 
-    border: 1px solid var(--border);
+    background:
+        rgba(28, 18, 43, 0.66);
+
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 22px;
-
-    background: rgba(25, 17, 39, 0.56);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -574,40 +706,51 @@ img {
 }
 
 .case-study:hover {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
-    border-color: rgba(216, 199, 255, 0.36);
+    border-color:
+        rgba(235, 220, 255, 0.40);
 }
 
 .case-study-number {
-    font-family: 'Playfair Display', serif;
+    font-family:
+        Georgia,
+        serif;
 
     font-size: 2rem;
 
-    color: rgba(216, 199, 255, 0.5);
+    color:
+        rgba(220, 200, 255, 0.50);
 }
 
 .case-study h3 {
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
 
-    font-size: 1.45rem;
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1.40rem;
+
+    font-weight: 600;
+
     line-height: 1.35;
 
-    color: var(--white);
-
-    margin-bottom: 12px;
+    color: #ffffff;
 }
 
 .case-study p {
     color: var(--muted);
 
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   EXPERIENCE
+   TIMELINE / EXPERIENCE
 ========================================================= */
 
 .timeline {
@@ -615,52 +758,57 @@ img {
 
     margin-top: 45px;
 
-    padding-left: 30px;
+    padding-left: 35px;
 }
 
 .timeline::before {
-    content: '';
+    content: "";
 
     position: absolute;
 
+    top: 4px;
+    bottom: 4px;
     left: 5px;
-    top: 5px;
-    bottom: 5px;
 
     width: 1px;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(216, 199, 255, 0.6),
-            rgba(216, 199, 255, 0.08)
+            rgba(220, 200, 255, 0.65),
+            rgba(220, 200, 255, 0.08)
         );
 }
 
 .timeline-item {
     position: relative;
 
-    padding: 0 0 45px 35px;
+    padding:
+        0 0 45px 30px;
 }
 
 .timeline-item::before {
-    content: '';
+    content: "";
 
     position: absolute;
 
+    top: 7px;
     left: -1px;
-    top: 6px;
 
     width: 11px;
     height: 11px;
 
     border-radius: 50%;
 
-    background: var(--lavender);
+    background:
+        var(--lavender);
 
     box-shadow:
-        0 0 0 5px rgba(216, 199, 255, 0.10),
-        0 0 20px rgba(216, 199, 255, 0.35);
+        0 0 0 5px
+        rgba(220, 200, 255, 0.10),
+
+        0 0 20px
+        rgba(220, 200, 255, 0.30);
 }
 
 .timeline-item:last-child {
@@ -668,13 +816,15 @@ img {
 }
 
 .timeline-item h3 {
-    font-family: 'Playfair Display', serif;
-
-    font-size: 1.35rem;
-
-    color: var(--white);
-
     margin-bottom: 5px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1.30rem;
+
+    color: #ffffff;
 }
 
 .timeline-item .timeline-meta {
@@ -684,24 +834,28 @@ img {
 
     color: var(--lavender);
 
-    font-size: 0.72rem;
+    font-size: 0.70rem;
+
     font-weight: 600;
+
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
 }
 
 .timeline-item p {
-    max-width: 750px;
+    max-width: 780px;
 
     color: var(--muted);
 
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   EXPERIENCE / SKILLS GENERIC SUPPORT
+   GENERIC EXPERIENCE
 ========================================================= */
 
 .experience {
@@ -711,29 +865,43 @@ img {
 .experience-item {
     padding: 25px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 }
 
 .experience-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 }
 
 .experience-item h3 {
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 6px;
+
+    font-family:
+        Georgia,
+        serif;
 
     font-size: 1.3rem;
 
-    margin-bottom: 6px;
+    color: #ffffff;
 }
 
 .experience-item p {
     color: var(--muted);
 
-    font-size: 0.9rem;
+    font-size: 0.90rem;
 }
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
 
 .skills {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 10px;
@@ -742,19 +910,25 @@ img {
 }
 
 .skill {
-    padding: 8px 14px;
+    padding:
+        8px 14px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.055);
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 0.78rem;
+    font-size: 0.76rem;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 }
 
 
@@ -765,15 +939,17 @@ img {
 .contact-section {
     position: relative;
 
-    padding: 120px 5%;
+    padding:
+        120px 5%;
 
     text-align: center;
 
     background:
-        linear-gradient(
-            rgba(21, 14, 34, 0.56),
-            rgba(21, 14, 34, 0.72)
-        );
+        rgba(17, 10, 29, 0.70);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 }
 
 .contact-section .section-label {
@@ -781,52 +957,71 @@ img {
 }
 
 .contact-section h2 {
-    max-width: 750px;
+    max-width: 760px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
-    font-family: 'Playfair Display', serif;
+    font-family:
+        Georgia,
+        serif;
 
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    line-height: 1.15;
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            4rem
+        );
 
     font-weight: 500;
+
+    line-height: 1.15;
+
+    color: #ffffff;
 }
 
 .contact-section p {
-    max-width: 600px;
+    max-width: 620px;
 
-    margin: 0 auto 30px;
+    margin:
+        0 auto 30px;
 
     color: var(--muted);
 
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .contact-links {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     flex-wrap: wrap;
 
     gap: 14px;
 }
 
 .contact-links a {
-    padding: 12px 20px;
+    padding:
+        12px 20px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background:
+        rgba(255, 255, 255, 0.06);
 
-    color: var(--white);
+    color: #ffffff;
 
-    font-size: 0.82rem;
-    font-weight: 500;
+    font-size: 0.80rem;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     transition:
         transform 0.3s ease,
@@ -835,32 +1030,41 @@ img {
 }
 
 .contact-links a:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
-    background: rgba(216, 199, 255, 0.12);
+    background:
+        rgba(220, 200, 255, 0.13);
 
-    border-color: rgba(216, 199, 255, 0.4);
+    border-color:
+        rgba(235, 220, 255, 0.42);
 }
 
 
 /* =========================================================
-   BUTTON GENERIC
+   GENERIC BUTTON
 ========================================================= */
 
 .button {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 12px 20px;
+    padding:
+        12px 20px;
 
     border-radius: 999px;
 
-    background: var(--lavender);
+    background:
+        var(--lavender);
 
-    color: #21172f;
+    color:
+        #251a35;
 
-    font-size: 0.8rem;
+    font-size: 0.80rem;
+
     font-weight: 600;
 
     transition:
@@ -869,31 +1073,40 @@ img {
 }
 
 .button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 30px rgba(180, 150, 240, 0.28);
+        0 12px 30px
+        rgba(190, 160, 245, 0.28);
 }
 
 
 /* =========================================================
-   CARDS / PROJECTS / GENERIC
+   GENERIC CARDS
 ========================================================= */
 
 .card,
 .project {
     padding: 28px;
 
-    border: 1px solid var(--border);
+    background:
+        rgba(28, 18, 43, 0.66);
+
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 20px;
 
-    background: rgba(25, 17, 39, 0.55);
+    backdrop-filter:
+        blur(15px);
 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter:
+        blur(15px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 }
 
 .project {
@@ -903,9 +1116,11 @@ img {
 }
 
 .project:hover {
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
-    border-color: rgba(216, 199, 255, 0.35);
+    border-color:
+        rgba(235, 220, 255, 0.38);
 }
 
 
@@ -914,36 +1129,42 @@ img {
 ========================================================= */
 
 footer {
-    padding: 45px 5%;
-
-    background: rgba(12, 8, 21, 0.78);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding:
+        45px 5%;
 
     text-align: center;
+
+    background:
+        rgba(10, 6, 17, 0.82);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 }
 
 footer p {
-    color: rgba(250, 248, 255, 0.5);
+    margin-bottom: 6px;
 
-    font-size: 0.7rem;
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 0.68rem;
 
     letter-spacing: 1.5px;
 
     text-transform: uppercase;
-
-    margin-bottom: 6px;
 }
 
 footer p:first-child {
-    color: var(--lavender);
+    color:
+        var(--lavender);
 
     font-weight: 600;
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -953,18 +1174,18 @@ footer p:first-child {
     }
 
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .hero-mark {
-        right: 5%;
-        bottom: 8%;
+        right: 4%;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 680px) {
@@ -972,29 +1193,33 @@ footer p:first-child {
     body {
         background-attachment: scroll;
 
-        background:
+        background-image:
             linear-gradient(
-                rgba(18, 12, 30, 0.20),
-                rgba(18, 12, 30, 0.54)
+                rgba(20, 12, 34, 0.10),
+                rgba(20, 12, 34, 0.28)
             ),
-            url('./background.jpeg') center center / cover no-repeat;
+            url('https://raw.githubusercontent.com/afairuzia-sudo/my-profile-/main/background.jpeg');
 
-        background-color: #171321;
-    }
+        background-position:
+            center center;
 
-    .container {
-        width: min(100% - 34px, 1120px);
+        background-size:
+            cover;
+
+        background-repeat:
+            no-repeat;
     }
 
 
     /* NAV */
 
     .navbar {
-        padding: 15px 20px;
+        padding:
+            15px 20px;
     }
 
     .nav-logo {
-        font-size: 0.95rem;
+        font-size: 0.90rem;
     }
 
     .nav-links {
@@ -1002,8 +1227,9 @@ footer p:first-child {
     }
 
     .nav-links a {
-        font-size: 0.58rem;
-        letter-spacing: 0.5px;
+        font-size: 0.55rem;
+
+        letter-spacing: 0.4px;
     }
 
 
@@ -1015,37 +1241,57 @@ footer p:first-child {
         padding:
             120px 22px
             80px;
+
+        text-align: center;
     }
 
     .hero-content {
         width: 100%;
+
+        align-items: center;
     }
 
     .eyebrow {
-        font-size: 0.58rem;
-        letter-spacing: 1.7px;
+        font-size: 0.56rem;
+
+        letter-spacing: 1.6px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+        width: 15px;
     }
 
     .hero h1 {
-        font-size: clamp(3rem, 16vw, 4.5rem);
+        font-size:
+            clamp(
+                3rem,
+                15vw,
+                4.4rem
+            );
 
-        margin-bottom: 25px;
+        margin-bottom: 24px;
     }
 
     .hero-title {
-        font-size: 1.5rem;
+        font-size:
+            1.45rem;
+
+        line-height: 1.25;
     }
 
     .hero-description {
-        font-size: 0.88rem;
+        font-size:
+            0.86rem;
+
         line-height: 1.8;
     }
 
     .hero-buttons {
-        align-items: stretch;
         flex-direction: column;
 
-        max-width: 260px;
+        width: 100%;
+        max-width: 270px;
     }
 
     .hero-buttons a {
@@ -1065,54 +1311,62 @@ footer p:first-child {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size:
+            2rem;
     }
 
 
     /* SERVICES */
 
     .services-grid {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
+        grid-template-columns:
+            1fr;
 
         margin-top: 35px;
     }
 
     .service-card {
-        min-height: auto;
+        min-height:
+            auto;
 
-        padding: 25px;
+        padding:
+            25px;
     }
 
 
     /* CASE STUDIES */
 
     .case-study {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 10px;
+        gap: 8px;
 
-        padding: 25px;
+        padding:
+            25px;
     }
 
     .case-study-number {
-        font-size: 1.5rem;
+        font-size:
+            1.5rem;
     }
 
     .case-study h3 {
-        font-size: 1.25rem;
+        font-size:
+            1.20rem;
     }
 
 
     /* TIMELINE */
 
     .timeline {
-        padding-left: 20px;
+        padding-left:
+            20px;
     }
 
     .timeline-item {
-        padding-left: 25px;
+        padding-left:
+            25px;
     }
 
 
@@ -1124,11 +1378,13 @@ footer p:first-child {
     }
 
     .contact-section h2 {
-        font-size: 2.25rem;
+        font-size:
+            2.25rem;
     }
 
     .contact-links {
-        flex-direction: column;
+        flex-direction:
+            column;
     }
 
     .contact-links a {
@@ -1140,13 +1396,14 @@ footer p:first-child {
     /* FOOTER */
 
     footer {
-        padding: 35px 20px;
+        padding:
+            35px 20px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   VERY SMALL PHONE
 ========================================================= */
 
 @media (max-width: 400px) {
@@ -1156,14 +1413,17 @@ footer p:first-child {
     }
 
     .nav-links a {
-        font-size: 0.5rem;
+        font-size:
+            0.48rem;
     }
 
     .hero h1 {
-        font-size: 3.2rem;
+        font-size:
+            3.1rem;
     }
 
     .hero-title {
-        font-size: 1.35rem;
+        font-size:
+            1.3rem;
     }
 }
