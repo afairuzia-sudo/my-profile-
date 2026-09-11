@@ -263,7 +263,7 @@ body::after {
 
     margin-bottom: 22px;
 
-    font-family: "Ballet", cursive;
+    font-family: "Parisienne", cursive;
     font-size: clamp(4rem, 8vw, 6.2rem);
     font-weight: 400;
 
@@ -274,7 +274,6 @@ body::after {
     text-shadow:
         0 0 35px rgba(205, 153, 232, 0.08);
 }
-
 .hero h1 span {
     display: block;
 }
