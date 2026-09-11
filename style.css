@@ -190,7 +190,8 @@ body::after {
 
     text-align: center;
 
-    overflow: hidden;
+    overflow: visible;
+}
 }
 
 .hero::before {
