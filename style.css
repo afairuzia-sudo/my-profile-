@@ -1490,3 +1490,61 @@ body::after {
     }
 
 }
+/* =========================================================
+   LANGUAGE SWITCHER
+   ========================================================= */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switcher button {
+    border: none;
+    background: transparent;
+
+    padding: 4px 2px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(244, 235, 248, 0.45);
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.language-switcher button:hover {
+    color: #ffffff;
+}
+
+.language-switcher button.active {
+    color: #ead8f3;
+}
+
+.language-divider {
+    color: rgba(220, 190, 240, 0.20);
+    font-size: 0.65rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .language-switcher {
+        display: flex;
+    }
+
+    .language-switcher button {
+        font-size: 0.62rem;
+    }
+
+}
