@@ -12,6 +12,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switcher button {
+    border: none;
+    background: transparent;
+    padding: 4px 2px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(244, 235, 248, 0.45);
+    cursor: pointer;
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.language-switcher button:hover {
+    color: #ffffff;
+}
+
+.language-switcher button.active {
+    color: #ead8f3;
+}
+
+.language-divider {
+    color: rgba(220, 190, 240, 0.20);
+    font-size: 0.65rem;
+}
+
+@media (max-width: 650px) {
+    .language-switcher button {
+        font-size: 0.62rem;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -32,6 +73,13 @@
         <a href="#work">WORK</a>
         <a href="#experience">EXPERIENCE</a>
         <a href="#contact">CONTACT</a>
+    
+        <div class="language-switcher" aria-label="Language selector">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <span class="language-divider">|</span>
+            <button type="button" class="lang-btn" data-lang="id">ID</button>
+        </div>
+
     </nav>
 
 </header>
@@ -1020,6 +1068,287 @@ window.addEventListener("click", function(event) {
 
 </script>
 
+
+
+<script>
+(function () {
+    const copy = {
+        en: {
+            nav: ["ABOUT", "SERVICES", "WORK", "EXPERIENCE", "CONTACT"],
+            heroEyebrow: "FOUNDER'S OFFICE · STRATEGIC OPERATIONS",
+            heroScript: "Founder’s Office · Strategic Operations",
+            heroTitle: ["Fixing stalled execution.", "Building systems that keep teams moving."],
+            heroDescription: "I'm not just here to manage your calendar and travel itineraries. I help founders turn priorities into execution, solve operational bottlenecks, and keep things moving.",
+            viewWork: "VIEW MY WORK",
+            connect: "LET'S CONNECT",
+            email: "EMAIL",
+            linkedin: "LINKEDIN",
+            aboutLabel: "ABOUT",
+            howIWork: "HOW I WORK",
+            aboutTitle: ["I work where", "strategy meets execution."],
+            about: [
+                "My experience was built closely alongside founders, technical teams, clients, and day-to-day operations. Rather than working inside one narrow function, I often became the person connecting the moving pieces.",
+                "I help turn unclear priorities into practical next steps, identify where execution is getting stuck, and create enough structure for people to move forward without unnecessary complexity.",
+                "My strength is not simply keeping things organized. It's understanding what is happening, figuring out what matters, and helping the right things move."
+            ],
+            whatIDo: "WHAT I DO",
+            servicesEyebrow: "SUPPORT · STRUCTURE · EXECUTION",
+            servicesTitle: ["More than", "administrative support."],
+            services: [
+                ["Founder Support", "Executive support, scheduling, travel coordination, follow-ups, information organization, and keeping priorities visible and moving."],
+                ["Strategic Operations", "Turning priorities into practical workflows, identifying bottlenecks, and creating structure around day-to-day execution."],
+                ["Execution Management", "Tracking moving pieces, coordinating people, following up on deliverables, and helping projects continue moving toward completion."],
+                ["Cross-functional Coordination", "Bridging founders, technical teams, clients, vendors, and other stakeholders so information does not get lost between functions."],
+                ["Operational Finance", "Payroll, invoice preparation, payment coordination, and other operational financial processes that keep business activities moving."],
+                ["Documentation & Stakeholders", "Contracts, proposals, reports, handover documents, stakeholder communication, and the documentation required to keep projects and partnerships aligned."]
+            ],
+            selectedWork: "SELECTED WORK",
+            problemEyebrow: "PROBLEM · JUDGMENT · EXECUTION",
+            workTitle: ["When things", "stopped moving."],
+            cases: [
+                ["Rebuilding a Trading Platform Team From Zero", "Context: executive role at AHLICODINGDOTCOM", "When the core IT team became unavailable close to a critical deadline, I helped coordinate the transition to a replacement team, briefed them on the project, and helped keep the project moving toward delivery.", ["TEAM TRANSITION", "PROJECT COORDINATION", "EXECUTION"]],
+                ["Managing High-Demand Clients Without Scope Creep", "Context: client & project coordination at AHLICODINGDOTCOM", "When client requirements continued to evolve during an active project, I helped keep communication and expectations aligned between the client, founder, and technical team — ensuring requests were understood without letting the project lose direction.", ["CLIENT COORDINATION", "EXPECTATION MANAGEMENT", "PROJECT FLOW"]],
+                ["Fixing Scattered Execution & Team Misalignment", "Context: operational & cross-functional coordination at AHLICODINGDOTCOM", "When tasks, people, and priorities became scattered, I helped clarify what needed to happen first, coordinate the relevant people, and turn fragmented execution into a workflow the team could actually move forward with.", ["OPERATIONS", "TEAM ALIGNMENT", "WORKFLOW"]]
+            ],
+            experienceLabel: "EXPERIENCE",
+            experienceEyebrow: "HOW THE EXPERIENCE WAS BUILT",
+            experienceIntro: "Much of my experience was built through executive support and direct coordination — not through certifications, but by stepping in when things became messy and needed to be resolved quickly.",
+            experiences: [
+                ["AHLICODINGDOTCOM", "2020–2024", "Executive Assistant to Founder", "Founder’s Office · Virtual Executive Support",
+                 ["Partnered directly with the founder to bring structure into daily operations, translating priorities into clear, executable workflows.",
+                  "Identified and resolved execution bottlenecks, ensuring initiatives moved forward without constant founder involvement.",
+                  "Managed and aligned cross-functional teams across remote and on-site environments to maintain clarity, accountability, and consistent progress.",
+                  "Oversaw operational flow including scheduling, stakeholder coordination, and internal communication.",
+                  "Coordinated payroll, invoicing, and payments as part of day-to-day business operations.",
+                  "Supported decision-making by organizing information, clarifying priorities, and maintaining execution focus.",
+                  "Prepared and managed key business documents including contracts, proposals, and handover documents.",
+                  "Contributed to team growth through recruitment screening and initial interviews.",
+                  "Conducted product testing and quality control, evaluating deliverables from an end-user perspective.",
+                  "Acted as a central coordination point, keeping moving parts aligned and reducing friction across the business."],
+                 "This role also became where I handled critical projects when the core team suddenly became unavailable — including coordinating the transition to a replacement team for projects with tight deadlines."],
+                ["AHLICODING COURSE — KITA KOMPETEN", "2022–2024", "Virtual Assistant Tutor", "Virtual Learning · Administrative Workflow",
+                 ["Provided personalized English learning support and assignment assistance.",
+                  "Scheduled online sessions and maintained effective communication with students.",
+                  "Utilized virtual platforms to support student engagement and learning outcomes."],
+                 "Taught practical workflows and administrative processes to aspiring virtual assistants — while strengthening my own ability to structure work systems that others could replicate, rather than simply operate myself."],
+                ["SHANSHENG GROUP", "Aug 2024–Feb 2025", "Human Resources Intern", "HR Operations · Recruitment · Documentation",
+                 ["Supported recruitment, onboarding, and employee administration.",
+                  "Assisted with payroll and employee documentation.",
+                  "Supported internal HR processes and documentation.",
+                  "Coordinated communication throughout recruitment and administrative processes."],
+                 "Beyond HR administration and recruitment, I helped rebuild a documentation workflow that had previously lacked structure — strengthening the way I approach messy processes and turn them into systems that work."],
+                ["VIVO TELECOMMUNICATIONS", "2015–2017", "Retail Operations Associate", "Retail Operations · Marketing · Customer-facing",
+                 ["Executed in-store marketing strategies to support sales and customer engagement.",
+                  "Coordinated promotional events and visual merchandising activities.",
+                  "Supported product placement and day-to-day retail operations."],
+                 "This is where my foundation was built: fast-paced coordination in an environment with multiple stakeholders and constantly changing priorities — the same pattern I now handle at the founder's office level."]
+            ],
+            educationLabel: "EDUCATION",
+            education: [["UNIVERSITY PROKLAMASI 45", "Bachelor’s in Psychology", "2023–Present"], ["HARAPAN MEKAR HIGH SCHOOL", "Science", "Graduated 2015"]],
+            contactEyebrow: "HAVE SOMETHING TO MOVE?",
+            contactTitle: "Let's connect.",
+            contactText: "If you're looking for someone who can work closely with leadership, bring structure to moving pieces, and keep execution moving, I'd love to hear from you.",
+            emailMe: "EMAIL ME",
+            footerRole: "FOUNDER'S OFFICE · STRATEGIC OPERATIONS"
+        },
+        id: {
+            nav: ["TENTANG", "LAYANAN", "KARYA", "PENGALAMAN", "KONTAK"],
+            heroEyebrow: "FOUNDER'S OFFICE · OPERASI STRATEGIS",
+            heroScript: "Founder’s Office · Operasi Strategis",
+            heroTitle: ["Menyelesaikan eksekusi yang terhenti.", "Membangun sistem yang membuat tim terus bergerak."],
+            heroDescription: "Saya bukan sekadar mengelola kalender dan itinerary perjalanan. Saya membantu founder mengubah prioritas menjadi eksekusi, menyelesaikan bottleneck operasional, dan menjaga semuanya tetap berjalan.",
+            viewWork: "LIHAT KARYA SAYA",
+            connect: "MARI TERHUBUNG",
+            email: "EMAIL",
+            linkedin: "LINKEDIN",
+            aboutLabel: "TENTANG",
+            howIWork: "CARA SAYA BEKERJA",
+            aboutTitle: ["Saya bekerja di titik ketika", "strategi harus benar-benar dijalankan."],
+            about: [
+                "Pengalaman saya dibangun dari bekerja dekat dengan founder, tim teknis, klien, dan operasional sehari-hari. Alih-alih berada dalam satu fungsi yang sempit, saya sering menjadi orang yang menghubungkan berbagai bagian yang sedang bergerak.",
+                "Saya membantu mengubah prioritas yang belum jelas menjadi langkah berikutnya yang praktis, menemukan titik di mana eksekusi tersendat, dan menciptakan struktur yang cukup agar tim bisa bergerak tanpa kompleksitas yang tidak perlu.",
+                "Kekuatan saya bukan sekadar menjaga semuanya tetap rapi. Saya memahami apa yang sedang terjadi, menentukan apa yang penting, lalu membantu hal yang tepat untuk terus bergerak."
+            ],
+            whatIDo: "YANG SAYA KERJAKAN",
+            servicesEyebrow: "DUKUNGAN · STRUKTUR · EKSEKUSI",
+            servicesTitle: ["Lebih dari sekadar", "dukungan administratif."],
+            services: [
+                ["Dukungan Founder", "Dukungan eksekutif, penjadwalan, koordinasi perjalanan, follow-up, pengorganisasian informasi, dan menjaga prioritas tetap terlihat serta bergerak."],
+                ["Operasi Strategis", "Mengubah prioritas menjadi workflow yang praktis, menemukan bottleneck, dan membangun struktur untuk eksekusi sehari-hari."],
+                ["Manajemen Eksekusi", "Melacak berbagai bagian yang bergerak, mengoordinasikan orang, melakukan follow-up deliverables, dan membantu proyek terus berjalan menuju penyelesaian."],
+                ["Koordinasi Lintas Fungsi", "Menjembatani founder, tim teknis, klien, vendor, dan stakeholder lain agar informasi tidak hilang di antara berbagai fungsi."],
+                ["Keuangan Operasional", "Payroll, persiapan invoice, koordinasi pembayaran, dan proses keuangan operasional lain yang membantu aktivitas bisnis tetap berjalan."],
+                ["Dokumentasi & Stakeholder", "Kontrak, proposal, laporan, dokumen handover, komunikasi stakeholder, dan dokumentasi yang dibutuhkan agar proyek serta partnership tetap selaras."]
+            ],
+            selectedWork: "KARYA PILIHAN",
+            problemEyebrow: "MASALAH · PENILAIAN · EKSEKUSI",
+            workTitle: ["Ketika semuanya", "berhenti bergerak."],
+            cases: [
+                ["Membangun Kembali Tim Platform Trading dari Nol", "Konteks: peran eksekutif di AHLICODINGDOTCOM", "Ketika tim IT inti tidak lagi tersedia mendekati deadline penting, saya membantu mengoordinasikan perpindahan ke tim pengganti, melakukan briefing proyek, dan menjaga proyek tetap bergerak menuju delivery.", ["TRANSISI TIM", "KOORDINASI PROYEK", "EKSEKUSI"]],
+                ["Menangani Klien dengan Permintaan Tinggi Tanpa Scope Creep", "Konteks: koordinasi klien & proyek di AHLICODINGDOTCOM", "Ketika kebutuhan klien terus berkembang selama proyek berjalan, saya membantu menjaga komunikasi dan ekspektasi tetap selaras antara klien, founder, dan tim teknis — memastikan setiap permintaan dipahami tanpa membuat arah proyek kehilangan fokus.", ["KOORDINASI KLIEN", "MANAJEMEN EKSPEKTASI", "ALUR PROYEK"]],
+                ["Merapikan Eksekusi yang Tersebar & Ketidakselarasan Tim", "Konteks: koordinasi operasional & lintas fungsi di AHLICODINGDOTCOM", "Ketika tugas, orang, dan prioritas mulai tersebar, saya membantu menentukan apa yang harus dilakukan lebih dulu, mengoordinasikan orang yang relevan, dan mengubah eksekusi yang terfragmentasi menjadi workflow yang bisa benar-benar dijalankan tim.", ["OPERASI", "KESELARASAN TIM", "WORKFLOW"]]
+            ],
+            experienceLabel: "PENGALAMAN",
+            experienceEyebrow: "BAGAIMANA PENGALAMAN INI TERBENTUK",
+            experienceIntro: "Sebagian besar pengalaman saya terbentuk melalui executive support dan koordinasi langsung — bukan dari sertifikasi, tetapi dari turun tangan ketika keadaan menjadi rumit dan perlu diselesaikan dengan cepat.",
+            experiences: [
+                ["AHLICODINGDOTCOM", "2020–2024", "Executive Assistant untuk Founder", "Founder’s Office · Virtual Executive Support",
+                 ["Bekerja langsung dengan founder untuk membawa struktur ke operasional harian, menerjemahkan prioritas menjadi workflow yang jelas dan dapat dijalankan.",
+                  "Mengidentifikasi dan menyelesaikan bottleneck eksekusi agar inisiatif tetap bergerak tanpa ketergantungan terus-menerus pada founder.",
+                  "Mengelola dan menyelaraskan tim lintas fungsi dalam lingkungan remote maupun onsite untuk menjaga kejelasan, akuntabilitas, dan progres.",
+                  "Mengawasi alur operasional termasuk penjadwalan, koordinasi stakeholder, dan komunikasi internal.",
+                  "Mengoordinasikan payroll, invoicing, dan pembayaran sebagai bagian dari operasional bisnis sehari-hari.",
+                  "Mendukung pengambilan keputusan dengan mengorganisasi informasi, memperjelas prioritas, dan menjaga fokus pada eksekusi.",
+                  "Menyiapkan dan mengelola dokumen bisnis utama termasuk kontrak, proposal, dan dokumen handover.",
+                  "Mendukung pertumbuhan tim melalui screening rekrutmen dan interview awal.",
+                  "Melakukan product testing dan quality control dengan mengevaluasi hasil dari perspektif end-user.",
+                  "Menjadi titik koordinasi utama untuk menjaga berbagai bagian tetap selaras dan mengurangi friction dalam bisnis."],
+                 "Peran ini juga menjadi tempat saya menangani proyek-proyek kritis ketika tim inti tiba-tiba tidak tersedia — termasuk mengoordinasikan perpindahan ke tim pengganti untuk proyek dengan deadline ketat."],
+                ["AHLICODING COURSE — KITA KOMPETEN", "2022–2024", "Tutor Virtual Assistant", "Virtual Learning · Administrative Workflow",
+                 ["Memberikan dukungan belajar Bahasa Inggris secara personal serta bantuan pengerjaan tugas.",
+                  "Menjadwalkan sesi online dan menjaga komunikasi yang efektif dengan siswa.",
+                  "Menggunakan platform virtual untuk mendukung engagement dan hasil belajar siswa."],
+                 "Mengajarkan workflow praktis dan proses administratif kepada calon virtual assistant — sekaligus memperkuat kemampuan saya dalam menyusun sistem kerja yang dapat direplikasi orang lain, bukan hanya saya jalankan sendiri."],
+                ["SHANSHENG GROUP", "Agu 2024–Feb 2025", "Human Resources Intern", "HR Operations · Recruitment · Documentation",
+                 ["Mendukung proses recruitment, onboarding, dan administrasi karyawan.",
+                  "Membantu payroll dan dokumentasi karyawan.",
+                  "Mendukung proses dan dokumentasi internal HR.",
+                  "Mengoordinasikan komunikasi sepanjang proses recruitment dan administrasi."],
+                 "Di luar administrasi dan recruitment HR, saya membantu membangun kembali workflow dokumentasi yang sebelumnya belum memiliki struktur — memperkuat cara saya menangani proses yang berantakan dan mengubahnya menjadi sistem yang berjalan."],
+                ["VIVO TELECOMMUNICATIONS", "2015–2017", "Retail Operations Associate", "Retail Operations · Marketing · Customer-facing",
+                 ["Menjalankan strategi marketing di toko untuk mendukung penjualan dan customer engagement.",
+                  "Mengoordinasikan event promosi dan aktivitas visual merchandising.",
+                  "Mendukung product placement dan operasional retail sehari-hari."],
+                 "Di sinilah fondasi saya terbentuk: koordinasi cepat dalam lingkungan dengan banyak stakeholder dan prioritas yang terus berubah — pola yang sekarang saya tangani di level founder's office."]
+            ],
+            educationLabel: "PENDIDIKAN",
+            education: [["UNIVERSITY PROKLAMASI 45", "S1 Psikologi", "2023–Sekarang"], ["HARAPAN MEKAR HIGH SCHOOL", "IPA", "Lulus 2015"]],
+            contactEyebrow: "ADA YANG PERLU DIGERAKKAN?",
+            contactTitle: "Mari terhubung.",
+            contactText: "Jika Anda membutuhkan seseorang yang bisa bekerja dekat dengan leadership, membawa struktur ke berbagai bagian yang bergerak, dan menjaga eksekusi tetap berjalan, saya dengan senang hati berdiskusi.",
+            emailMe: "EMAIL SAYA",
+            footerRole: "FOUNDER'S OFFICE · OPERASI STRATEGIS"
+        }
+    };
+
+    function setText(el, value) {
+        if (!el) return;
+        el.textContent = value;
+    }
+
+    function setLines(el, lines) {
+        if (!el) return;
+        el.innerHTML = lines.map((line, i) => i === lines.length - 1 ? line : line + "<br>").join("");
+    }
+
+    function applyLanguage(lang) {
+        const t = copy[lang];
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll(".nav-links a").forEach((el, i) => {
+            if (t.nav[i]) setText(el, t.nav[i]);
+        });
+
+        const hero = document.querySelector(".hero");
+        if (hero) {
+            setText(hero.querySelector(".eyebrow"), t.heroEyebrow);
+            setText(hero.querySelector(".hero-script"), t.heroScript);
+            setLines(hero.querySelector("h2"), t.heroTitle);
+            setText(hero.querySelector(".hero-description"), t.heroDescription);
+            setText(hero.querySelector(".btn-primary"), t.viewWork);
+            setText(hero.querySelector(".btn-secondary"), t.connect);
+            setText(hero.querySelector(".connect-item span"), t.email);
+            setText(hero.querySelectorAll(".connect-item span")[1], t.linkedin);
+        }
+
+        const about = document.querySelector(".about-section");
+        if (about) {
+            setText(about.querySelector(".section-label"), t.aboutLabel);
+            setText(about.querySelector(".eyebrow"), t.howIWork);
+            setLines(about.querySelector(".section-heading h2"), t.aboutTitle);
+            about.querySelectorAll(".about-text p").forEach((el, i) => setText(el, t.about[i]));
+        }
+
+        const services = document.querySelector(".services-section");
+        if (services) {
+            setText(services.querySelector(".section-label"), t.whatIDo);
+            setText(services.querySelector(".eyebrow"), t.servicesEyebrow);
+            setLines(services.querySelector(".section-heading h2"), t.servicesTitle);
+            services.querySelectorAll(".service-card").forEach((card, i) => {
+                setText(card.querySelector("h3"), t.services[i][0]);
+                setText(card.querySelector("p"), t.services[i][1]);
+            });
+        }
+
+        const work = document.querySelector(".work-section");
+        if (work) {
+            setText(work.querySelector(".section-label"), t.selectedWork);
+            setText(work.querySelector(".eyebrow"), t.problemEyebrow);
+            setLines(work.querySelector(".section-heading h2"), t.workTitle);
+            work.querySelectorAll(".case-study").forEach((item, i) => {
+                const data = t.cases[i];
+                setText(item.querySelector("h3"), data[0]);
+                setText(item.querySelector(".case-context"), data[1]);
+                setText(item.querySelector(".case-content > p:not(.case-context)"), data[2]);
+                item.querySelectorAll(".case-tags span").forEach((tag, j) => setText(tag, data[3][j]));
+            });
+        }
+
+        const exp = document.querySelector(".experience-section");
+        if (exp) {
+            setText(exp.querySelector(".section-label"), t.experienceLabel);
+            setText(exp.querySelector(".eyebrow"), t.experienceEyebrow);
+            setText(exp.querySelector(".experience-intro-text"), t.experienceIntro);
+
+            exp.querySelectorAll(".experience-item").forEach((item, i) => {
+                const data = t.experiences[i];
+                setText(item.querySelector(".experience-company"), data[0]);
+                setText(item.querySelector(".experience-period"), data[1]);
+                setText(item.querySelector(".experience-main h3"), data[2]);
+                setText(item.querySelector(".experience-role"), data[3]);
+                item.querySelectorAll(".experience-points li").forEach((li, j) => setText(li, data[4][j]));
+                setText(item.querySelector(".experience-context"), data[5]);
+            });
+        }
+
+        const edu = document.querySelector(".education-section");
+        if (edu) {
+            setText(edu.querySelector(".section-label"), t.educationLabel);
+            edu.querySelectorAll(".education-item").forEach((item, i) => {
+                const data = t.education[i];
+                setText(item.querySelector(".education-school"), data[0]);
+                setText(item.querySelector("h3"), data[1]);
+                setText(item.querySelector(".education-period"), data[2]);
+            });
+        }
+
+        const contact = document.querySelector(".contact-section");
+        if (contact) {
+            setText(contact.querySelector(".eyebrow"), t.contactEyebrow);
+            setText(contact.querySelector("h2"), t.contactTitle);
+            setText(contact.querySelector("p:not(.eyebrow)"), t.contactText);
+            setText(contact.querySelector(".btn-primary"), t.emailMe);
+            setText(contact.querySelector(".btn-secondary"), t.linkedin);
+        }
+
+        setText(document.querySelector(".footer-left span"), t.footerRole);
+
+        document.querySelectorAll(".lang-btn").forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+
+        localStorage.setItem("siteLanguage", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+    });
+
+    // English is the default, as requested.
+    applyLanguage("en");
+})();
+</script>
 
 </body>
 </html>
