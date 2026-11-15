@@ -1548,3 +1548,39 @@ body::after {
     }
 
 }
+
+
+/* =========================================================
+   WORK WITH ME (reuses the service card look)
+========================================================= */
+
+.offer-section {
+    background:
+        rgba(9, 5, 13, 0.38);
+}
+
+.offer-grid {
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+@media (max-width: 650px) {
+
+    .offer-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* Case study paragraphs: spacing and bold labels */
+
+.case-content > p:not(.case-context) + p:not(.case-context) {
+    margin-top: 14px;
+}
+
+.case-content > p:not(.case-context) strong {
+    color: #f7eef9;
+
+    font-weight: 600;
+}
